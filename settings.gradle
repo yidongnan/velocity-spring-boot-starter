@@ -1,0 +1,4 @@
+rootProject.name = 'velocity-spring-boot'
+
+include "velocity-spring-boot-autoconfigure"
+include "velocity-spring-boot-starter"

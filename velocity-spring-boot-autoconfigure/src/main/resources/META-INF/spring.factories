@@ -1,0 +1,5 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+net.alpha.velocity.configuration.VelocityAutoConfiguration
+org.springframework.boot.autoconfigure.template.TemplateAvailabilityProvider=\
+net.alpha.velocity.configuration.VelocityTemplateAvailabilityProvider

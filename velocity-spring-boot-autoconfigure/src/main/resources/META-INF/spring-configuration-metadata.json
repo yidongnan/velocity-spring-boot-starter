@@ -1,0 +1,133 @@
+{
+  "groups": [
+    {
+      "name": "spring.velocity",
+      "type": "net.alpha.velocity.configuration.VelocityProperties",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.velocity.allow-request-override",
+      "type": "java.lang.Boolean",
+      "description": "Set whether HttpServletRequest attributes are allowed to override (hide) controller\n generated model attributes of the same name.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.allow-session-override",
+      "type": "java.lang.Boolean",
+      "description": "Set whether HttpSession attributes are allowed to override (hide) controller\n generated model attributes of the same name.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.cache",
+      "type": "java.lang.Boolean",
+      "description": "Enable template caching.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.charset",
+      "type": "java.nio.charset.Charset",
+      "description": "Template encoding.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.check-template-location",
+      "type": "java.lang.Boolean",
+      "description": "Check that the templates location exists.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.content-type",
+      "type": "org.springframework.util.MimeType",
+      "description": "Content-Type value.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.date-tool-attribute",
+      "type": "java.lang.String",
+      "description": "Name of the DateTool helper object to expose in the Velocity context of the view.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Enable MVC view resolution for this technology.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.expose-request-attributes",
+      "type": "java.lang.Boolean",
+      "description": "Set whether all request attributes should be added to the model prior to merging\n with the template.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.expose-session-attributes",
+      "type": "java.lang.Boolean",
+      "description": "Set whether all HttpSession attributes should be added to the model prior to\n merging with the template.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.expose-spring-macro-helpers",
+      "type": "java.lang.Boolean",
+      "description": "Set whether to expose a RequestContext for use by Spring's macro library, under the\n name \"springMacroRequestContext\".",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.number-tool-attribute",
+      "type": "java.lang.String",
+      "description": "Name of the NumberTool helper object to expose in the Velocity context of the view.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.prefer-file-system-access",
+      "type": "java.lang.Boolean",
+      "description": "Prefer file system access for template loading. File system access enables hot\n detection of template changes.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "spring.velocity.prefix",
+      "type": "java.lang.String",
+      "description": "Prefix that gets prepended to view names when building a URL.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.properties",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "description": "Additional velocity properties.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.request-context-attribute",
+      "type": "java.lang.String",
+      "description": "Name of the RequestContext attribute for all views.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.resource-loader-path",
+      "type": "java.lang.String",
+      "description": "Template path.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties",
+      "defaultValue": "classpath:/templates/"
+    },
+    {
+      "name": "spring.velocity.suffix",
+      "type": "java.lang.String",
+      "description": "Suffix that gets appended to view names when building a URL.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.toolbox-config-location",
+      "type": "java.lang.String",
+      "description": "Velocity Toolbox config location, for example \"/WEB-INF/toolbox.xml\". Automatically\n loads a Velocity Tools toolbox definition file and expose all defined tools in the\n specified scopes.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    },
+    {
+      "name": "spring.velocity.view-names",
+      "type": "java.lang.String[]",
+      "description": "White list of view names that can be resolved.",
+      "sourceType": "net.alpha.velocity.configuration.VelocityProperties"
+    }
+  ]
+}

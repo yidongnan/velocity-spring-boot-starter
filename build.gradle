@@ -1,0 +1,84 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        mavenCentral()
+        jcenter()
+        maven { url 'http://repo.spring.io/plugins-release' }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    ext {
+        projectVersion = '1.0.0.SNAPSHOT'
+
+        springBootVersion = '1.5.13.RELEASE'
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.7'
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    apply plugin: "io.spring.dependency-management"
+
+    compileJava {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+        options.encoding = 'UTF-8'
+    }
+
+    compileJava.options*.compilerArgs = [
+            "-Xlint:serial", "-Xlint:varargs", "-Xlint:classfile", "-Xlint:dep-ann",
+            "-Xlint:divzero", "-Xlint:empty", "-Xlint:finally", "-Xlint:overrides",
+            "-Xlint:path", "-Xlint:static", "-Xlint:try", "-Xlint:fallthrough"
+    ]
+
+    // Enable Checkstyle
+    if (null != System.getenv('ENABLE_CHECKSTYLE')) {
+        apply plugin: 'checkstyle'
+        dependencies {
+            checkstyle 'com.puppycrawl.tools:checkstyle:6.15'
+        }
+    }
+
+    tasks.withType(Checkstyle) {
+        outputs.upToDateWhen { false }
+        configFile = new File(rootDir, "checkstyle-google.xml")
+
+        include 'net/devh/**/*'
+    }
+
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        mavenCentral()
+        jcenter()
+        maven { url 'http://repo.spring.io/plugins-release' }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url 'https://repo.spring.io/libs-milestone' }
+    }
+    dependencies{
+        compileOnly('org.projectlombok:lombok:1.18.0')
+        annotationProcessor('org.projectlombok:lombok:1.18.0')
+    }
+    buildscript {
+        repositories {
+            mavenLocal()
+            maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+            maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+            mavenCentral()
+            jcenter()
+            maven { url 'http://repo.spring.io/plugins-release' }
+            maven { url "https://plugins.gradle.org/m2/" }
+        }
+    }
+}
