@@ -124,14 +124,4 @@ public class VelocityProperties extends AbstractTemplateViewResolverProperties {
     public void setPreferFileSystemAccess(boolean preferFileSystemAccess) {
         this.preferFileSystemAccess = preferFileSystemAccess;
     }
-
-    @Override
-    public void applyToViewResolver(Object viewResolver) {
-        super.applyToViewResolver(viewResolver);
-        VelocityViewResolver resolver = (VelocityViewResolver) viewResolver;
-        resolver.setToolboxConfigLocation(getToolboxConfigLocation());
-        resolver.setDateToolAttribute(getDateToolAttribute());
-        resolver.setNumberToolAttribute(getNumberToolAttribute());
-    }
-
 }

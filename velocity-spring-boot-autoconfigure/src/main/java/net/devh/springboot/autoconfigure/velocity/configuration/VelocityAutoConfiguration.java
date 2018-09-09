@@ -21,7 +21,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.autoconfigure.template.TemplateLocation;
 import org.springframework.boot.autoconfigure.web.ConditionalOnEnabledResourceChain;
-import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -123,7 +123,10 @@ public class VelocityAutoConfiguration {
             EmbeddedVelocityLayoutViewResolver resolver = new EmbeddedVelocityLayoutViewResolver();
             resolver.setViewClass(EmbeddedVelocityLayoutToolboxView.class);
             resolver.setLayoutUrl("templates/layout/index.vm");
-            this.properties.applyToViewResolver(resolver);
+            resolver.setToolboxConfigLocation(properties.getToolboxConfigLocation());
+            resolver.setDateToolAttribute(properties.getDateToolAttribute());
+            resolver.setNumberToolAttribute(properties.getNumberToolAttribute());
+            this.properties.applyToMvcViewResolver(resolver);
             return resolver;
         }
 

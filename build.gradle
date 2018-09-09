@@ -11,7 +11,7 @@ buildscript {
     ext {
         projectVersion = '1.0.0.SNAPSHOT'
 
-        springBootVersion = '1.5.13.RELEASE'
+        springBootVersion = '2.0.4.RELEASE'
     }
     dependencies {
         classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
